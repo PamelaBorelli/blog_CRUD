@@ -1,0 +1,48 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem-Vindos</h1>
+            <p class="lead">Olá, sejam muito bem-vindos ao meu Primeiro Blog.</p>
+            <hr class="my-4">
+            <h4>Meu nome é Pamela Borelli, sou estudante de Desenvolvimento de Software na Fatec-Franca.<br/>
+                O foco desse projeto era aprender o CRUD completo. <br/>Além disso aprendi Node.js, Express.js, MySQL, Bootstrap, Sequelize e utilizei como linguagem: Javascript.<br/>
+                <br/>  Espero que gostem! :-)
+            </h4>
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a> -->
+
+            
+
+          </div>
+          <br/><h2>Artigos</h2><br/>
+
+        <% articles.forEach (article =>{ %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title%> </h2>
+            </div>
+            
+            <div class="card-body">
+                <a href="/<%=article.slug%>" class="btn btn-success">Ler Artigo</a>
+            </div>
+
+        </div>
+        <br>
+        <% })%> 
+           
+    <div class="row">
+        <div class="col col-12">
+            
+            <a class="btn btn-primary btn-lg" a style="float:right" href="/articles/page/1">Próximo</a>
+        </div>
+        <hr>
+
+    </div>
+
+    </div>
+</body>
+
+<%- include ('partials/footer.ejs') %>
